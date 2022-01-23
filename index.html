@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relógio</title>
+    <style>
+        *{
+            margin: 0;padding: 0;box-sizing: border-box;
+        }
+        body{
+            overflow: hidden;
+            position: relative;
+        }
+        #image{
+            width: 100%;
+            height:100vh;
+        }
+        #mostrarHora{
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0.6;
+        }
+        #mostrarHora:hover{
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="mostrarHora"></h1>
+    <img src="pexels-pok-rie-10776721.jpg" id="image" alt="">
+    <script>
+        setInterval(myfunction,1000);
+        function myfunction(){
+            let tempo = new Date();
+            document.getElementById("mostrarHora").innerHTML = tempo.getHours() +
+             ":" + tempo.getMinutes() +
+             ":" + tempo.getSeconds();
+
+        }
+    </script>
+
+</body>
+</html>
